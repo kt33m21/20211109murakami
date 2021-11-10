@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-class TodoTableSeeder extends Seeder
+class todosTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +14,8 @@ class TodoTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $param = [
+            'contents' => '焼肉たべたい',
+        ];
     }
 }

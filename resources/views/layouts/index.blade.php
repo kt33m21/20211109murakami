@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Document @yield('title')</title>
   <style>
     .main{
       background-color:#2d197c;
@@ -50,6 +50,11 @@
       transition:0.4s;
     }
 
+    .button-a:hover{
+      background:#dc70fa;
+      color:#FFFFFF;
+    }
+
     .text-a{
       width:80%;
       border:1px solid #ccc;
@@ -59,21 +64,21 @@
       appearance: none;
     }
 
-    table, th, td {
-  width: auto !important;
-}
+    tr th{
+      padding-right:110px;
+      padding-top:0;
+    }
 
   </style>
 </head>
 <body>
-  @yield('main')
+  @section('main')
   <div class = "main">
-    @yield('main-contents')
+    @show
       <div class = "main-contents">
+          @yield('main-contents')
         <p class = "main-title">Todo List</p>
-        @yield('sub-contents')
       <div class = "sub-contents">
-        @yield('action')
         <form action = "index.php" method="post" class="main-action">
           @csrf
           <input type="text" class="text-a">
@@ -92,4 +97,5 @@
   </div>
 
 </body>
+<script></script>
 </html>
