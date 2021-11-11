@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\todo;
 use Illuminate\Http\Request;
 
 class TodoController extends Controller
@@ -9,6 +10,7 @@ class TodoController extends Controller
     public function index()
     {
         return view('layouts.index');
+
     }
 
     public function create()
@@ -25,4 +27,5 @@ class TodoController extends Controller
     {
         return view('delete');
     }
+
 }
