@@ -64,10 +64,7 @@
       appearance: none;
     }
 
-    tr th{
-      padding-right:110px;
-      padding-top:0;
-    }
+
 
   </style>
 </head>
@@ -86,11 +83,21 @@
         </form>
         <table>
           <tr>
-            <th>作成日</th>
-            <th>タスク名</th>
-            <th>更新</th>
-            <th>削除</th>
+            <th class="main-table">作成日</th>
+            <th class="main-table-task">タスク名</th>
+            <th class="sub-table">更新</th>
+            <th class="sub-table">削除</th>
           </tr>
+          @foreach ($items as $item)
+          <tr>
+            <td>
+              {{$item->gettimestamp()}}
+            </td>
+            <td>
+              {{$item->getcontent()}}
+            </td>
+          </tr>
+          @endforeach
         </table>
       </div>
     </div>
