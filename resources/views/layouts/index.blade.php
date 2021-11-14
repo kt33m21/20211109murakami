@@ -64,7 +64,12 @@
       appearance: none;
     }
 
-
+    table{
+      border-collapse:collapse;
+      border-spacing:0;
+      text-align:center;
+      width:100%;
+    }
 
   </style>
 </head>
@@ -83,10 +88,10 @@
         </form>
         <table>
           <tr>
-            <th class="main-table">作成日</th>
-            <th class="main-table-task">タスク名</th>
-            <th class="sub-table">更新</th>
-            <th class="sub-table">削除</th>
+            <th>作成日</th>
+            <th>タスク名</th>
+            <th>更新</th>
+            <th>削除</th>
           </tr>
           @foreach ($items as $item)
           <tr>
