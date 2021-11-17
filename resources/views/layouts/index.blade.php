@@ -113,7 +113,7 @@
           @yield('main-contents')
         <p class = "main-title">Todo List</p>
       <div class = "sub-contents">
-        <form action = "index.php" method="post" class="main-action">
+        <form action = "TodoController.php" method="post" class="main-action">
           @csrf
           <input type="text" class="text-a">
           <input type="submit" value="追加" class="button-a">
