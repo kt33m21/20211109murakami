@@ -12,20 +12,4 @@ class TodoController extends Controller
         $items = Todo::all();
         return view('layouts.index', ['items' => $items]);
     }
-
-    public function create()
-    {
-        return view('create');
-    }
-
-    public function update()
-    {
-        return view('update');
-    }
-
-    public function delete()
-    {
-        return view('delete');
-    }
-
 }
