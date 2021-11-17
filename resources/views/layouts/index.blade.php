@@ -55,6 +55,38 @@
       color:#FFFFFF;
     }
 
+    .update-button{
+      border-color:#ff6b71;
+      color:#ff6b71;
+      font-weight:bold;
+      background-color:#FFFFFF;
+      border-radius:4px;
+      padding: 8px 16px;
+      cursor: pointer;
+      transition:0.4s;
+    }
+
+    .update-button:hover{
+      background:#ff6b71;
+      color:#FFFFFF;
+    }
+
+    .delete-button{
+      border-color:#6bfcff;
+      color:#6bfcff;
+      font-weight:bold;
+      background-color:#FFFFFF;
+      border-radius:4px;
+      padding: 8px 16px;
+      cursor: pointer;
+      transition:0.4s;
+    }
+
+    .delete-button:hover{
+      background:#6bfcff;
+      color:#FFFFFF;
+    }
+
     .text-a{
       width:80%;
       border:1px solid #ccc;
@@ -100,6 +132,12 @@
             </td>
             <td>
               {{$item->getcontent()}}
+            </td>
+            <td>
+              <button class="update-button">更新</button>
+            </td>
+            <td>
+              <button class="delete-button">削除</button>
             </td>
           </tr>
           @endforeach
