@@ -1,6 +1,3 @@
-<?php
-$value = $item->getcontent;
-?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -58,7 +55,7 @@ $value = $item->getcontent;
       color:#FFFFFF;
     }
 
-    .update-button{
+    .button-b{
       border-color:#ff6b71;
       color:#ff6b71;
       font-weight:bold;
@@ -69,12 +66,12 @@ $value = $item->getcontent;
       transition:0.4s;
     }
 
-    .update-button:hover{
+    .button-b:hover{
       background:#ff6b71;
       color:#FFFFFF;
     }
 
-    .delete-button{
+    .button-c{
       border-color:#6bfcff;
       color:#6bfcff;
       font-weight:bold;
@@ -85,7 +82,7 @@ $value = $item->getcontent;
       transition:0.4s;
     }
 
-    .delete-button:hover{
+    .button-c:hover{
       background:#6bfcff;
       color:#FFFFFF;
     }
@@ -97,6 +94,16 @@ $value = $item->getcontent;
       padding:5px;
       font-size:14px;
       appearance: none;
+    }
+
+    .text-b{
+      width:90%;
+      padding:5px;
+      border-radius:5px;
+      border:1px solid #ccc;
+      appearance:none;
+      font-size:14px;
+      outline:none;
     }
 
     table{
@@ -113,11 +120,12 @@ $value = $item->getcontent;
       <div class = "main-contents">
         <p class = "main-title">Todo List</p>
       <div class = "sub-contents">
-        <form action = "{{ url('/todo/create')}}" method="post" class="main-action">
+        <form action = "{{ url('/todo/create')}}" method="post">
           @csrf
           <input type="text" class="text-a" name="content">
           <input type="submit" value="追加" class="button-a">
         </form>
+        <form action = "{{ url('/todo/delete')}}" method="post">
         <table>
           <tr>
             <th>作成日</th>
@@ -131,17 +139,18 @@ $value = $item->getcontent;
               {{$item->gettimestamp()}}
             </td>
             <td>
-              <input type ="text" class="text-b" value="<?php $value; ?>">
+              <input type="text" name="content" value="{{$item->content}}" class = text-b>
             </td>
             <td>
-              <button class="update-button">更新</button>
+              <input type="submit" value="更新" class="button-b">
             </td>
             <td>
-              <button class="delete-button">削除</button>
+              <input type="submit" value="削除" class="button-c">
             </td>
           </tr>
           @endforeach
         </table>
+        </form>
       </div>
     </div>
   </div>
