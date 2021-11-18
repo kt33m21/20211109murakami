@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Todo extends Model
 {
+    use HasFactory;
+
+    protected $fillable = ['content'];
+
+    public static $rules = array(
+        'content' => ['required'|'min:0'|'max:20']
+        );
 
     public function gettimestamp()
     {

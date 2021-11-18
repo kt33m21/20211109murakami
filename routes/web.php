@@ -16,5 +16,4 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/',[TodoController::class,'index']);
-Route::post('/todo/create',function(Request $request){
-});
+Route::post('/todo/create',[TodoController::class,'create']);

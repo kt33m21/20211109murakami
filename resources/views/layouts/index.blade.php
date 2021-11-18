@@ -106,11 +106,8 @@
   </style>
 </head>
 <body>
-  @section('main')
   <div class = "main">
-    @show
       <div class = "main-contents">
-          @yield('main-contents')
         <p class = "main-title">Todo List</p>
       <div class = "sub-contents">
         <form action = "{{ url('/todo/create')}}" method="post" class="main-action">
