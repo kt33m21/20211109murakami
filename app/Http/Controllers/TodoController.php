@@ -9,12 +9,8 @@ class TodoController extends Controller
 {
     public function index()
     {
-        $items = Todo::all();   
+        $items = Todo::all();
         return view('layouts.index', ['items' => $items]);
-    }
-    public function find()
-    {
-        return view('find',['input' =>'']);
     }
     public function search(Request $request)
     {
@@ -25,17 +21,14 @@ class TodoController extends Controller
         ];
         return view('find',$param);
     }
-    public function bind(Todo $Todo)
+    public function layouts(Todo $Todo)
     {
         $data = [
             'item' => $Todo,
         ];
-        return view('Todo.binds',$data);
+        return view('layouts,index',$data);
     }
-    public function add()
-    {
-        return view('add');
-    }
+
     public function create(Request $request)
     {
         $this->validate($request, Todo::$rules);
