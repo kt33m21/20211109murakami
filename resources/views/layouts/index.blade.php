@@ -112,7 +112,7 @@
       <div class = "sub-contents">
         <form action = "{{ url('/todo/create')}}" method="post" class="main-action">
           @csrf
-          <input type="text" class="text-a">
+          <input type="text" class="text-a" name="content">
           <input type="submit" value="追加" class="button-a">
         </form>
         <table>
