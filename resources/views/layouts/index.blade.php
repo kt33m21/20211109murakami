@@ -1,3 +1,6 @@
+<?php
+$value = $item->getcontent;
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -128,7 +131,7 @@
               {{$item->gettimestamp()}}
             </td>
             <td>
-              {{$item->getcontent()}}
+              <input type ="text" class="text-b" value="<?php $value; ?>">
             </td>
             <td>
               <button class="update-button">更新</button>
