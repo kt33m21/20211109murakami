@@ -21,13 +21,6 @@ class TodoController extends Controller
         ];
         return view('find',$param);
     }
-    public function layouts(Todo $Todo)
-    {
-        $data = [
-            'item' => $Todo,
-        ];
-        return view('layouts,index',$data);
-    }
 
     public function create(Request $request)
     {
