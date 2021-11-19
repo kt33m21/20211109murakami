@@ -125,7 +125,6 @@
           <input type="text" class="text-a" name="content">
           <input type="submit" value="追加" class="button-a">
         </form>
-        <form action = "{{ url('/todo/delete')}}" method="post">
         <table>
           <tr>
             <th>作成日</th>
@@ -142,15 +141,18 @@
               <input type="text" name="content" value="{{$item->content}}" class = text-b>
             </td>
             <td>
-              <input type="submit" value="更新" class="button-b">
+              <form action = "{{ url('/todo/update')}}" method="post">
+                <input type="submit" value="更新" class="button-b">
+              </form>
             </td>
             <td>
-              <input type="submit" value="削除" class="button-c">
+              <form action = "{{ url('/todo/delete')}}" method="post">
+                <input type="submit" value="削除" class="button-c">
+              </form>
             </td>
           </tr>
           @endforeach
         </table>
-        </form>
       </div>
     </div>
   </div>
