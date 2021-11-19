@@ -133,6 +133,8 @@
             <th>削除</th>
           </tr>
           @foreach ($items as $item)
+          <form action = "{{ url('/todo/update')}}" method="post">
+              @csrf
           <tr>
             <td>
               {{$item->gettimestamp()}}
@@ -141,15 +143,15 @@
               <input type="text" name="content" value="{{$item->content}}" class = text-b>
             </td>
             <td>
-              <form action = "{{ url('/todo/update')}}" method="post">
-              @csrf
-                <input type="submit" value="更新" class="button-b" id=$todo>
+              <input type="hidden" name="content" value="{{$item->content}}" >
+              <input type="submit" value="更新" class="button-b" name="id">
               </form>
             </td>
             <td>
               <form action = "{{ url('/todo/delete')}}" method="post">
               @csrf
-                <input type="submit" value="削除" class="button-c" id=$todo>
+                <input type="hidden" name="content" value="{{$item->content}}" >
+                <input type="submit" value="削除" class="button-c" name="id">
               </form>
             </td>
           </tr>
