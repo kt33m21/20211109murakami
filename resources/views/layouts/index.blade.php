@@ -143,15 +143,15 @@
               <input type="text" name="content" value="{{$item->content}}" class = text-b>
             </td>
             <td>
-              <input type="hidden" name="content" value="{{$item->content}}" >
-              <input type="submit" value="更新" class="button-b" name="id">
+              <input type="hidden" name="id" value="{{$item->id}}" >
+              <input type="submit" value="更新" class="button-b">
               </form>
             </td>
             <td>
               <form action = "{{ url('/todo/delete')}}" method="post">
               @csrf
-                <input type="hidden" name="content" value="{{$item->content}}" >
-                <input type="submit" value="削除" class="button-c" name="id">
+                <input type="hidden" name="id" value="{{$item->id}}" >
+                <input type="submit" value="削除" class="button-c">
               </form>
             </td>
           </tr>
