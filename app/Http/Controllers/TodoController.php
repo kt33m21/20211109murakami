@@ -35,7 +35,7 @@ class TodoController extends Controller
         $this->validate($request, Todo::$rules);
         $form = $request->all();
         unset($form['_token']);
-        Todo::where('id', $request->id)->update($form);
+        Todo::where('content', $request->id)->update($form);
         return redirect('/');
     }
 

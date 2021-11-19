@@ -142,12 +142,14 @@
             </td>
             <td>
               <form action = "{{ url('/todo/update')}}" method="post">
-                <input type="submit" value="更新" class="button-b">
+              @csrf
+                <input type="submit" value="更新" class="button-b" id=$todo>
               </form>
             </td>
             <td>
               <form action = "{{ url('/todo/delete')}}" method="post">
-                <input type="submit" value="削除" class="button-c">
+              @csrf
+                <input type="submit" value="削除" class="button-c" id=$todo>
               </form>
             </td>
           </tr>
